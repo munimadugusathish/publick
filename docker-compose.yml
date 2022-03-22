@@ -1,0 +1,16 @@
+version: '8.0'
+
+services:
+    popularserver:
+         image: popular
+         expose:
+            - '2345'
+
+    nonpopular: 
+         build:
+            dockerfile: Dockerfile
+            context: ./
+            ports:
+               - '5432'
+       popularserver
+    depends_on:
